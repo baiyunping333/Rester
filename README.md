@@ -109,20 +109,22 @@ URL is the only mandatory param.
 Example of a TestStep (JSON):
 
 ```
-  testSteps: [
-    {
-       "name":"Name of TestStep",
-  		   "apiUrl":"http://example/api/v1/helloworld/print",
-       "asserts":{
-             "headers":{
-                 "content-type":"application/json; charset=utf-8"
-             }
-             "payload":{
-                "message":"Hello World!"
-             }
-       }
-    }
-  ]
+  {
+    "testSteps": [
+        {
+            "name":"Name of TestStep",
+            "apiUrl":"http://example/api/v1/helloworld/print",
+            "asserts":{
+                "headers":{
+                    "content-type":"application/json; charset=utf-8"
+                },
+                "payload":{
+                    "message":"Hello World!"
+                }
+            }
+        }
+     ]
+}
 ```
 
 A complete example as YAML, leveraging the *yaml references*:
@@ -300,13 +302,14 @@ As mentioned previously, all of the assert statements are specified within an **
 
     }
   ]
+  ```
 
-- Assert specific payload elements -
-  "output.level" is 2
-  "output.result" is eqal to "Message Success"
-  "output.status" is greater than 3
-  "output.body" contains the word 'launched'
+#Assert specific payload elements 
 
+- "output.level" is 2
+- "output.result" is eqal to "Message Success"
+- "output.status" is greater than 3
+- "output.body" contains the word 'launched'
  ```
   testSteps: [
     {
